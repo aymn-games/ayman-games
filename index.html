@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ألعاب أيمن</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f111a;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #00ffcc;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+        p {
+            color: #8b9bb4;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .game-card {
+            background: #1a1d2e;
+            border: 2px solid #2a2f4a;
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .game-card:hover {
+            border-color: #00ffcc;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 204, 0.1);
+        }
+        .game-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .btn-play {
+            background-color: #00ffcc;
+            color: #0f111a;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>مكتبة ألعاب أيمن 🎮</h1>
+    <p>مرحباً بك في موقع ألعابي المباشرة، اختر لعبة وابدأ التحدي!</p>
+
+    <div class="container">
+        <!-- اللعبة الأولى -->
+        <a href="https://aymn-games.github.io/roulette-game/" class="game-card" target="_blank">
+            <span class="game-title">🎲 لعبة الروليت (Roulette Game)</span>
+            <span class="btn-play">العب الآن</span>
+        </a>
+
+        <!-- اللعبة الثانية -->
+        <a href="https://aymn-games.github.io/roulette-game/" class="game-card" target="_blank">
+            <span class="game-title">🚀 اللعبة الجديدة (تحت التطوير)</span>
+            <span class="btn-play">العب الآن</span>
+        </a>
+    </div>
+
+</body>
+</html>
