@@ -55,13 +55,20 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
         }
 
-       .container {
-    max-width: 1200px; /* توسيع العرض لتوفير مساحة للشبكة المربعة */
+     /* ضبط عام للملف لضمان عدم خروج العناصر عن حواف الشاشات الصغيرة */
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* العرض الأقصى على شاشات الكمبيوتر */
     margin: 0 auto;
-    display: grid; /* تفعيل نظام الشبكة الاحترافي */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ترتيب تلقائي للألعاب بجانب بعضها */
-    gap: 25px; /* مسافة منسقة وموحدة بين المربعات */
     padding: 20px;
+    display: grid; /* نظام الشبكة الذكي */
+    /* السطر أدناه يحسب المقاسات تلقائياً: يصف الألعاب بجانب بعضها على الكمبيوتر، ويجعلها فوق بعضها على الجوال */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    gap: 20px; /* مسافات متناسقة بين المربعات */
     position: relative;
     z-index: 2;
 }
@@ -75,18 +82,27 @@
     color: #ffffff;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     
-    /* تعديل طريقة توزيع العناصر داخل المربع ليصبح عمودياً ومتناسقاً */
+    /* ترتيب محتويات الكارت عمودياً بشكل متناسق */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     
-    aspect-ratio: 1 / 1; /* إجبار البطاقة على اتخاذ شكل مربع مثالي متساوي الطول والعرض */
+    width: 100%; /* تأخذ كامل عرض المربع المتاح لها في الشبكة */
+    aspect-ratio: 1 / 1; /* مربع مثالي متساوي الطول والعرض */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
     text-align: center;
 }
+
+/* تأثير تفاعلي مميز عند تمرير الماوس بالكمبيوتر أو الضغط بالإصبع في الجوال */
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 255, 204, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 255, 204, 0.2);
+}
+
 
 /* تأثير تفاعلي مبهر عند تمرير الفأرة فوق مربع اللعبة */
 .game-card:hover {
