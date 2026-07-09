@@ -19,21 +19,30 @@
             100% { transform: translateY(0px) scale(1); filter: drop-shadow(0 0 15px rgba(0, 255, 204, 0.4)); }
         }
 
-           background-color: #03030d;
-    background-image: url('https://unsplash.com');
+     body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0914;
+    background-image: 
+        radial-gradient(at 20% 20%, rgba(31, 23, 62, 0.4) 0px, transparent 50%),
+        radial-gradient(at 80% 40%, rgba(13, 39, 63, 0.4) 0px, transparent 50%),
+        radial-gradient(at 40% 80%, rgba(20, 15, 38, 0.5) 0px, transparent 50%);
     background-size: cover;
-    background-position: center;
     background-attachment: fixed;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 0;
+}
 
-        /* تنسيق وحركة لوغو ألعاب أيمن */
-        .site-logo {
-            width: 320px; /* حجم اللوغو ليكون واضحاً ومناسباً كعنوان */
-            max-width: 90%;
-            height: auto;
-            margin: 20px auto 10px auto;
-            display: block;
-            animation: logoFloat 4s ease-in-out infinite;
-        }
+.site-logo {
+    width: 220px; /* إرجاع حجم اللوجو الطبيعي والأنيق */
+    max-width: 90%;
+    height: auto;
+    margin: 20px auto 10px auto;
+    display: block;
+    animation: logoFloat 4s ease-in-out infinite;
+}
+
 
         .subtitle {
             color: #a0aec0;
