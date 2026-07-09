@@ -19,12 +19,6 @@
             100% { transform: translateY(0px) scale(1); filter: drop-shadow(0 0 15px rgba(0, 255, 204, 0.4)); }
         }
 
-        /* أنيميشن لتلألؤ النجوم في الخلفية */
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #050510;
@@ -42,7 +36,7 @@
             animation: spaceMove 30s ease infinite alternate;
             color: #ffffff;
             text-align: center;
-            padding: 40px 20px;
+            padding: 40px 20px 120px 20px; /* زيادة الحشو السفلي لترك مساحة لزر تيك توك الثابت */
             margin: 0;
             overflow-x: hidden;
         }
@@ -100,7 +94,6 @@
             position: relative;
         }
 
-        /* تأثير نيون احترافي عند مرور الماوس */
         .game-card:hover {
             border-color: #00ffcc;
             transform: translateY(-8px);
@@ -124,7 +117,6 @@
             margin: 5px 0;
         }
 
-        /* زر عرض شرح اللعبة الجديد وتصميمه الأنيق */
         .btn-toggle-desc {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -147,7 +139,6 @@
             box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
         }
 
-        /* إخفاء الوصف افتراضياً وإضافته كصندوق منسدل سلس */
         .game-description {
             font-size: 0.9rem;
             color: #cbd5e0;
@@ -164,9 +155,8 @@
             border: 1px solid transparent;
         }
 
-        /* كلاس يضاف بالـ JavaScript عندما يتم فتح الوصف */
         .game-description.active {
-            max-height: 200px; /* يعطي مساحة للوصف ليظهر بسلاسة */
+            max-height: 200px;
             padding: 12px;
             margin-top: 10px;
             border-color: rgba(255, 255, 255, 0.05);
@@ -194,7 +184,6 @@
             box-shadow: 0 0 25px rgba(0, 255, 204, 0.7);
         }
 
-        /* كرت اللعبة المغلق (تحت التطوير) */
         .game-card.disabled {
             opacity: 0.65;
             cursor: not-allowed;
@@ -205,23 +194,63 @@
             box-shadow: none;
             border-color: rgba(255, 255, 255, 0.1);
         }
+
+        /* تصميم زر تيك توك الثابت والمميز بالنظام النيوني المشع */
+        .tiktok-sticky-footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            width: auto;
+        }
+
+        .btn-tiktok {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            /* تأثير ظل متوهج بألوان تيك توك الشهيرة (الأحمر والأزرق) */
+            box-shadow: -3px 0 15px rgba(254, 44, 85, 0.6), 3px 0 15px rgba(37, 244, 238, 0.6);
+            transition: all 0.3s ease-in-out;
+            white-space: nowrap;
+        }
+
+        .btn-tiktok:hover {
+            transform: scale(1.05);
+            border-color: #ffffff;
+            box-shadow: -5px 0 25px rgba(254, 44, 85, 0.9), 5px 0 25px rgba(37, 244, 238, 0.9);
+        }
+
+        .tiktok-icon {
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
+        }
     </style>
 </head>
 <body>
 
+    <!-- شعار الموقع والوصف -->
     <img src="logo.png" alt="لوغو ألعاب أيمن" class="site-logo">
     <p class="subtitle">مرحباً بك في موقع ألعابي المباشرة، اختر لعبة وابدأ التحدي الفضائي!</p>
 
     <div class="container">
 
+        <!-- اللعبة الأولى: الروليت -->
         <div class="game-card">
             <div class="game-info">
                 <span class="game-title">🎲 لعبة الروليت (Roulette Game)</span>
-                
                 <button class="btn-toggle-desc" onclick="toggleDescription(this)">
                     🔍 عرض شرح اللعبة
                 </button>
-                
                 <p class="game-description">
                     روليت بأسماء قبائل سعودية، إذا توقفت الروليت عند أحد أسماء اللاعبين تظهر نافذة أسماء قبائل وخلفها أسماء قبائل ومهمة المشاركين يختار اسم قبيلة إما أن يقصي اللاعب أو يفشل الإقصاء، أيضاً عند تكرار الاسم مرتين في الروليت يعيد أحد اللاعبين الذين تم إقصاؤهم وفي كل جولة تتغير أسماء القبائل ومن خلفها، استمتعوا باللعب!
                 </p>
@@ -229,14 +258,13 @@
             <a href="https://aymn-games.github.io/roulette-game/" target="_blank" class="btn-play">العب الآن</a>
         </div>
 
+        <!-- اللعبة الثانية: لعبة مين الامبوستر -->
         <div class="game-card">
             <div class="game-info">
                 <span class="game-title">🕵️‍♂️ لعبة مين الامبوستر (Who is the Impostor)</span>
-                
                 <button class="btn-toggle-desc" onclick="toggleDescription(this)">
                     🔍 عرض شرح اللعبة
                 </button>
-                
                 <p class="game-description">
                     لعبة جماعية الهوست يقوم بإنشاء غرفة واللاعبين يقومون بالدخول عن طريق كود الغرفة، وتبدأ اللعبة بتوزيع كلمات لكل اللاعبين جميعهم نفس الكلمة ماعدا الامبوستر مختلف لهم ثلاث تلميحات لتحديد الامبوستر.
                 </p>
@@ -244,14 +272,13 @@
             <a href="https://aymn-games.github.io/Who-is-the-Impostor/" class="btn-play">العب الآن</a>
         </div>
 
+        <!-- اللعبة الثالثة: تحت التطوير -->
         <div class="game-card disabled">
             <div class="game-info">
                 <span class="game-title">🚀 اللعبة الجديدة (تحت التطوير)</span>
-                
                 <button class="btn-toggle-desc" onclick="toggleDescription(this)">
                     🔍 عرض شرح اللعبة
                 </button>
-                
                 <p class="game-description">
                     ترقبوا إطلاق لعبتنا الجديدة قريباً، مليئة بالإثارة والتحديثات البرمجية الجديدة!
                 </p>
@@ -261,12 +288,21 @@
 
     </div>
 
+    <!-- زر التيك توك الثابت والمميز أسفل الشاشة -->
+    <div class="tiktok-sticky-footer">
+        <a href="https://www.tiktok.com/@em70_q" target="_blank" class="btn-tiktok">
+            <!-- أيقونة تيك توك مدمجة بصيغة SVG عالية الدقة -->
+            <svg class="tiktok-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0h88a121.18,121.18,0,0,0,13.66,57.06A122.18,122.18,0,0,0,381,102.39a121.13,121.13,0,0,0,67,20.14Z"/>
+            </svg>
+            تابعني على تيك توك em70_q
+        </a>
+    </div>
+
+    <!-- كود الجافا سكريبت لتشغيل أزرار الشرح بسلاسة -->
     <script>
         function toggleDescription(button) {
-            // العثور على عنصر الوصف الذي يأتي بعد الزر مباشرة داخل الـ game-info
             const description = button.nextElementSibling;
-            
-            // تبديل ظهور الوصف
             if (description.classList.contains('active')) {
                 description.classList.remove('active');
                 button.innerHTML = '🔍 عرض شرح اللعبة';
